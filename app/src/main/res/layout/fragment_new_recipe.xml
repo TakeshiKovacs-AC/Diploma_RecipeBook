@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#87ceeb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.NewRecipeFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cuisineSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/convergence_spacing"
+        android:paddingBottom="36dp"
+        android:choiceMode="singleChoice"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_anchor="@id/authorInput"
+        app:srcCompat="@layout/cuisine_name"
+        tools:layout_editor_absoluteX="10dp"
+        tools:listitem="@layout/cuisine_name">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/authorInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="@dimen/common"
+        android:hint="@string/recipeAuthor"
+        android:singleLine="true"
+        android:textColor="#005000"
+        android:gravity="start|bottom"
+        android:inputType="text"
+        android:ellipsize="end"
+        android:textSize="20sp"
+        app:layout_anchor="@id/reciteTitleInput"
+        tools:text="Имя автора рецепте">
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/reciteTitleInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common"
+        android:layout_gravity="top|start"
+        android:gravity="start|bottom"
+        android:ellipsize="end"
+        android:textColor="#005000"
+        android:singleLine="true"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:hint="@string/recipeName"
+        app:layout_anchor="@id/cuisineList"
+        tools:text="Название блюда">
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <TextView
+        android:id="@+id/cuisineList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="@dimen/common"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:ellipsize="end"
+        android:gravity="center|bottom"
+        android:textStyle="bold"
+        android:textColor="#310062"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:textSize="22sp"
+        app:layout_anchor="@id/edit"
+        tools:text="Выбранная кухня">
+    </TextView>
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="@dimen/common"
+        android:layout_marginTop="50dp"
+        android:gravity="center|top"
+        android:background="#90ee90"
+        android:layout_gravity="end"
+        app:layout_anchor="@id/listOfInstructions"
+        tools:text="Режим редактирования этапов рецепта">
+    </TextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menuButton"
+        style="@style/Widget.AppTheme.CommonAppButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_gravity="top"
+        android:textSize="16sp"
+        android:text="@string/menu"
+        app:layout_anchorGravity="left"
+        app:icon="@drawable/ic_menu_24"
+        app:iconSize="32dp"
+        app:iconGravity="textStart"
+        app:iconTint="#20b2aa"
+        app:layout_anchor="@id/listOfInstructions"
+        tools:text="Меню"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOfInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_gravity="start|end"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_anchor="@id/lowBar"
+        tools:listitem="@layout/instructions_range">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/noAnyInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:gravity="center"
+        android:layout_gravity="start|end"
+        android:visibility="gone"
+        android:textSize="22sp"
+        android:background="#f08080"
+        app:layout_anchor="@id/lowBar"
+        android:text="@string/noAnyStages">
+    </TextView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/lowBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/okButton"
+        android:contentDescription="@string/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/lowBar"
+        app:layout_anchorGravity="top|center"
+        app:srcCompat="@drawable/ic_check_24" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

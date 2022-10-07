@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    Favorite-->
+    <item
+        android:drawable="@drawable/ic_thumb_up_48"
+        android:state_checked="true"
+        />
+    <!-- Other -->
+    <item
+        android:drawable="@drawable/ic_thumb_down_48"
+        />
+</selector>

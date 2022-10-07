@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#87ceeb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.NewInstructionsFragment">
+
+    <TextView
+        android:id="@+id/numberOfStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        android:layout_gravity="top|start"
+        android:layout_margin="12dp"
+        android:paddingBottom="48dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#310062"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/stepNumber"
+        app:layout_anchor="@id/stepInput">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/stepInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="12dp"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:ellipsize="end"
+        android:gravity="start|bottom"
+        android:singleLine="true"
+        android:hint="@string/stepName"
+        app:layout_anchor="@id/instructionsList">
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/instructionsList"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:padding="12dp"
+        android:background="#fff8dc"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:hint="@string/stepDescription"
+        app:layout_anchor="@id/lowBar">
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:id="@+id/lowBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/save"
+        app:srcCompat="@drawable/ic_check_24"
+        app:layout_anchor="@id/lowBar"
+        app:layout_anchorGravity="top|center"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#008b8b"
+    android:backgroundTint="#7fffd4">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cuisineObjectView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/purple_500"
+            android:backgroundTint="#310062"
+            android:checkedButton="@id/cuisine_selector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="@dimen/common">
+
+    <ToggleButton
+        android:id="@+id/cuisine_selector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:checked="false"
+        android:background="#ff9f5e"
+        android:text="@strings/All"
+        android:clickable="true"
+        android:paddingStart="@dimen/common"
+        android:paddingEnd="@dimen/common"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Все категории" />
+
+
+        </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

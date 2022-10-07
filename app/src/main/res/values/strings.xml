@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Diploma_project_Nerecipe</string>
+    <string name="greeting">Welcome to Recipe App</string>
+    <string name="avatar">Author</string>
+    <string name="recipeMenu">Recipe menu</string>
+    <string name="like">Favorite</string>
+    <string name="recipeAuthor">Enter author name</string>
+    <string name="recipeName">Enter the name of Your recipe</string>
+    <string name="menu">Menu</string>
+    <string name="recipe_text">Recipe text</string>
+    <string name="delete">Remove</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="allRecipe">All recipes</string>
+    <string name="myRecipe">My recipes</string>
+    <string name="favorites">Favorite</string>
+    <string name="stepName">Enter the name of recipe step</string>
+    <string name="stepNumber">Step number</string>
+    <string name="stepDescription">Enter detailed description of recipe stage</string>
+
+    <string name="addRecipe">Add recipe</string>
+    <string name="fieldsNotFilled">All fields have to be filled</string>
+    <string name="noParentObj">No parent object has been created</string>
+    <string name="editStageSelection">Select the edit stage and use the menu</string>
+    <string name="searchError">The search and choosing the category are unavailable</string>
+    <string name="cuisineSelection">Chose the cuisine type, please!</string>
+    <string name="sharing">Share recipe</string>
+    <string name="editMessage">Edit the message</string>
+    <string name="httpError">HTTP reference is necessary</string>
+    <string name="noAnyRecipes">There are no any recipes data</string>
+    <string name="noAnyStages">There are no any stages data</string>
+
+    <string name="instructionDesc">The step %1$d \n %2$s \n %3$s </string>
+
+    <string-array name="cuisineNames">
+        <item>All</item>
+        <item>European</item>
+        <item>Russian</item>
+        <item>Oriental</item>
+        <item>Mediterranean</item>
+        <item>Panasian</item>
+        <item>Eastern</item>
+        <item>American</item>
+    </string-array>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
+</resources>

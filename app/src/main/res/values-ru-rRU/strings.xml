@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Книга рецептов</string>
+    <string name="greeting">!Добро пожаловать в Книгу рецептов!</string>
+    <string name="avatar">Автор</string>
+    <string name="recipeMenu">Меню рецепта</string>
+    <string name="recipeName">Введите название Вашего рецепта</string>
+    <string name="recipeAuthor">Введите имя автора</string>
+    <string name="menu">Меню</string>
+    <string name="save">Сохранить</string>
+    <string name="like">Нравится</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="add">Добавить</string>
+    <string name="allRecipe">Все рецепты</string>
+    <string name="myRecipe">Мои рецепты</string>
+    <string name="favorites">Избранные</string>
+    <string name="stepNumber">Шаг рецепта номер</string>
+    <string name="stepDescription">Введите описание этапа рецепта</string>
+    <string name="stepName">Введите название этапа рецепта</string>
+
+    <string name="recipe_text">Текст рецепта</string>
+    <string name="noParentObj">Не было создано ни одного родительского объекта</string>
+    <string name="fieldsNotFilled">Все поля должны быть заполнены</string>
+    <string name="httpError">Необходима ссылка в формате HTTP</string>
+    <string name="editStageSelection">Выберите этап для редактирования и используйте меню</string>
+    <string name="editMessage">Редактировать сообщения</string>
+    <string name="cuisineSelection">Выберите тип кухни, пожалуйста!</string>
+    <string name="searchError">Невозможно произвести поиск и выбор категории</string>
+    <string name="sharing">Поделиться</string>
+    <string name="addRecipe">Добавить рецепт</string>
+    <string name="noAnyRecipes">Нет данных о рецептах</string>
+    <string name="noAnyStages">Нет данных об этапах приготовления</string>
+
+    <string name="instructionDesc">Шаг %1$d \n %2$s \n %3$s</string>
+
+    <string-array name="cuisineNames">
+        <item>Все категории</item>
+        <item>Европейская</item>
+        <item>Русская</item>
+        <item>Азиатская</item>
+        <item>Средиземноморская</item>
+        <item>Паназиатская</item>
+        <item>Восточная</item>
+        <item>Американская</item>
+    </string-array>
+</resources>

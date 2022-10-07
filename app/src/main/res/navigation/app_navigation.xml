@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/mainAppFragment">
+
+    <fragment
+        android:id="@+id/mainAppFragment"
+        android:name="ru.antonbasket.diploma_project_nerecipe.fragments.MainAppFragment"
+        android:label="MainAppFragment" >
+        <action
+            android:id="@+id/mainAppFragment_to_recipeViewFragment"
+            app:destination="@id/recipeViewFragment" />
+        <action
+            android:id="@+id/mainAppFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeViewFragment"
+        android:name="ru.antonbasket.diploma_project_nerecipe.fragments.RecipeViewFragment"
+        android:label="fragment_recipe_view"
+        tools:layout="@layout/fragment_recipe_view" >
+        <action
+            android:id="@+id/recipeViewFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+        <action
+            android:id="@+id/recipeViewFragment_to_newInstructionsFragment"
+            app:destination="@id/newInstructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newRecipeFragment"
+        android:name="ru.antonbasket.diploma_project_nerecipe.fragments.NewRecipeFragment"
+        android:label="NewRecipeFragment" >
+        <action
+            android:id="@+id/newRecipeFragment_to_newInstructionsFragment"
+            app:destination="@id/newInstructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newInstructionsFragment"
+        android:name="ru.antonbasket.diploma_project_nerecipe.fragments.NewInstructionsFragment"
+        android:label="NewInstructionsFragment" />
+</navigation>
