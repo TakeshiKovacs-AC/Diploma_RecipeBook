@@ -128,25 +128,7 @@ class RecipeViewFragment: Fragment() {
         }
         return binding.root
     }
-
     companion object {
         var Bundle.argumentsId: String? by StringArguments
     }
 }
-
-//            viewModel.edit(it)
-//            viewModel.updateStages()
-//            viewModel.dataStages.observe(viewLifecycleOwner) { stages ->
-//                if (stages.isNotEmpty()) {
-//                    binding.stageContent.adapter = stagesAdapter
-//                    stagesAdapter.submitList(stages)
-//
-//                    binding.root.findViewById<TextView>(R.id.empty_view_stage).visibility = View.INVISIBLE
-//                    binding.root.findViewById<RecyclerView>(R.id.stageContent).visibility = View.VISIBLE
-//                } else {
-//                    binding.root.findViewById<TextView>(R.id.empty_view_stage).visibility = View.VISIBLE
-//                    binding.root.findViewById<RecyclerView>(R.id.stageContent).visibility = View.INVISIBLE
-//                }
-//            }
-
-//        binding.stageContent.visibility = View.VISIBLE

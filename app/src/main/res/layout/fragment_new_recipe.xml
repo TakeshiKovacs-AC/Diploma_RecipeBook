@@ -20,7 +20,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_anchor="@id/authorInput"
         app:srcCompat="@layout/cuisine_name"
-        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/cuisine_name">
 
     </androidx.recyclerview.widget.RecyclerView>

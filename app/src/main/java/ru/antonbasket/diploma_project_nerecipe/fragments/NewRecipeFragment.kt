@@ -59,7 +59,6 @@ class NewRecipeFragment : Fragment() {
         })
         binding.cuisineSelector.adapter = cuisineAdapter
 
-
         val instructionsAdapter = InstructionsAdapter(object : InstructionsClickedListener {
             override fun instructionsClicked(instructions: Instructions) {
                 instructionsInstance = instructions
@@ -119,10 +118,8 @@ class NewRecipeFragment : Fragment() {
         }
 
         arguments?.recipeAuthorArguments?.let(binding.authorInput::setText)
-        //?: binding.authorEdit.setText("author").toString()
 
         arguments?.recipeNameArguments?.let(binding.reciteTitleInput::setText)
-        //?: binding.nameEdit.setText("name").toString()
 
         arguments?.cuisineArguments?.let(binding.cuisineList::setText)
             ?: binding.cuisineList.setText(R.string.cuisineSelection)
@@ -148,7 +145,6 @@ class NewRecipeFragment : Fragment() {
                                     BaseTransientBottomBar.LENGTH_INDEFINITE
                                 )
                                     .setAction(android.R.string.ok) {
-                                        //findNavController().navigateUp()
                                     }
                                     .show()
                             } else {
@@ -192,7 +188,6 @@ class NewRecipeFragment : Fragment() {
                                         BaseTransientBottomBar.LENGTH_INDEFINITE
                                     )
                                         .setAction(android.R.string.ok) {
-                                            //findNavController().navigateUp()
                                         }
                                         .show()
                                 } else {
