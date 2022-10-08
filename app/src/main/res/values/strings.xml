@@ -30,8 +30,7 @@
     <string name="httpError">HTTP reference is necessary</string>
     <string name="noAnyRecipes">There are no any recipes data</string>
     <string name="noAnyStages">There are no any stages data</string>
-
-    <string name="instructionDesc">The step %1$d \n %2$s \n %3$s </string>
+    <string name="instructions_editor">Recipe steps editor mode</string>
 
     <string-array name="cuisineNames">
         <item>All</item>

@@ -35,8 +35,6 @@
                 android:src="@drawable/coocking"
                 android:scaleType="fitXY" />
 
-
-<!--            android:contentDescription="@string/app_name"-->
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 

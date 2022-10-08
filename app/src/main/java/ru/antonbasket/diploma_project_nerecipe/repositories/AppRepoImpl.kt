@@ -122,22 +122,3 @@ class AppRepoImpl(
         getInstructionById(instructions.recipeId)
     }
 }
-
-//        Transformations.map(daoStage.getAll()) { list ->
-//            list.map {
-//                it.toDto()
-//            }
-//        } as MutableLiveData<List<Stage>>
-
-//    init {
-//        // для первоначальной записи первых постов
-//        //for(recipe in recipes) { dao.save(RecipeEntity.fromDto(recipe)) }
-//
-//        data.value = dao.getInitAll().let { list ->
-//            list.map {
-//                it.toDto()
-//                //recipes = listOf(it.toDto()) + recipes
-//            }
-//        }
-//        //data.value = recipes
-//    }

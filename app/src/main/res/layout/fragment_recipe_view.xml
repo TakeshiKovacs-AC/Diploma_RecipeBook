@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -83,32 +82,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:checkable="true" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/stageContent"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:layout_marginBottom="30dp"-->
-    <!--        android:visibility="visible"-->
-    <!--        android:layout_gravity="bottom"-->
-    <!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-    <!--        tools:visibility="visible"-->
-    <!--        tools:listitem="@layout/stage_item">-->
-    <!--    </androidx.recyclerview.widget.RecyclerView>-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/empty_view_stage"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="210dp"-->
-    <!--        android:layout_marginBottom="30dp"-->
-    <!--        android:layout_gravity="bottom|center"-->
-    <!--        android:gravity="center"-->
-    <!--        android:textSize="18sp"-->
-    <!--        android:background="@color/cardview_shadow_start_color"-->
-    <!--        android:visibility="gone"-->
-    <!--        android:text="@string/no_stages"-->
-    <!--        tools:text="@string/no_stages">-->
-    <!--    </TextView>-->
 
 </com.google.android.material.card.MaterialCardView>

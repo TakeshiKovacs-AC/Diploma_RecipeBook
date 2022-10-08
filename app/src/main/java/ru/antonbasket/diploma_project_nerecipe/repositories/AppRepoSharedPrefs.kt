@@ -119,14 +119,3 @@ class AppRepoSharedPrefs(
 }
 
 fun getUnrealPostId(): Long = UNREAL_ID
-
-
-//    override fun getData(): LiveData<List<Recipe>> = data
-//    override fun getByFilter(author: String, name: String, category: String): List<Recipe>? {
-//        data.value = getAll().value?.filter { recipe ->
-//            (recipe.author == author ||
-//                    recipe.name == name ||
-//                    recipe.category == category)
-//        }
-//        return data.value
-//    }

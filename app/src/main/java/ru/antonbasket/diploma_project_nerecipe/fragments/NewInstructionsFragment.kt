@@ -39,19 +39,13 @@ class NewInstructionsFragment: Fragment() {
         )
         var testContentValue: String? = null
         val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
-            // Handle the back button event
-            //if (draftContent != null)
             instance = binding.instructionsList.text.toString()
             if (::instance.isInitialized)
                 initialViewModel.saveContent(instance)
             findNavController().navigateUp()
         }
-        // The callback can be enabled or disabled here or in the lambda
         featuring.isEnabled = true
 
-
-
-        //val idRecipe = arguments?.idSubNewArg?.toLong() ?: 0L
 
         binding.numberOfStep.text = "${resources.getString(R.string.stepNumber)}${arguments?.instrPlaceArguments?.toInt()}"
         arguments?.instrTitleArguments?.let(binding.stepInput::setText)
@@ -62,9 +56,6 @@ class NewInstructionsFragment: Fragment() {
                 testContentValue = it.toString()
             }
 
-        // This callback will only be called when MyFragment is at least Started.
-
-
         binding.okButton.setOnClickListener {
             if (binding.stepInput.text.isNullOrBlank() ||
                 binding.instructionsList.text.isNullOrBlank()
@@ -74,7 +65,6 @@ class NewInstructionsFragment: Fragment() {
                     BaseTransientBottomBar.LENGTH_INDEFINITE
                 )
                     .setAction(android.R.string.ok) {
-                        //findNavController().navigateUp()
                     }
                     .show()
                 return@setOnClickListener

@@ -19,6 +19,7 @@
     <string name="stepDescription">Введите описание этапа рецепта</string>
     <string name="stepName">Введите название этапа рецепта</string>
 
+    <string name="instructions_editor">Режим редактирования этапов рецепта</string>
     <string name="recipe_text">Текст рецепта</string>
     <string name="noParentObj">Не было создано ни одного родительского объекта</string>
     <string name="fieldsNotFilled">Все поля должны быть заполнены</string>

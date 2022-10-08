@@ -31,10 +31,4 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
-
-    <!--    <style name="Widget.AppTheme.LikeCheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">-->
-    <!--        <item name="buttonTint">@color/like_checkbox_tint</item>-->
-    <!--        <item name="android:textColor">?attr/colorControlNormal</item>-->
-    <!--        <item name="android:paddingStart">@dimen/icon_button_padding</item>-->
-    <!--    </style>-->
 </resources>

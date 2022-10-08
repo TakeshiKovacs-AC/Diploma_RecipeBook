@@ -24,9 +24,6 @@ fun instructionBinding(
     binding.apply {
         with(instructionImage) {
             setImageResource(R.drawable.coocking)
-//            setOnClickListener {
-//                visibility = View.GONE
-//            }
         }
 
         with(instructionDescription) {

@@ -23,7 +23,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     val recipeData = repository.getRecipeFromList()
 
     val instructionsData = repository.getAllInstructions()
-    val instructionsContent = MutableLiveData(instructionsEmpty)
+    private val instructionsContent = MutableLiveData(instructionsEmpty)
 
     fun likeById(id: Long) = repository.likeById(id)
     fun getRecById(id: Long) = repository.getRecById(id)

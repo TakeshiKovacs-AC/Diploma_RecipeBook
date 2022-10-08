@@ -9,8 +9,6 @@ import ru.antonbasket.diploma_project_nerecipe.entity.RecipeEntity
 @Dao
 interface DaoOfRecipe {
 
-//    @Query("SELECT * FROM RecipeEntity ORDER BY id DESC")
-//    fun getInitAll(): List<RecipeEntity>
 
     @Query("SELECT * FROM RecipeEntity ORDER BY position DESC")
     fun getAll(): LiveData<List<RecipeEntity>>
@@ -19,7 +17,7 @@ interface DaoOfRecipe {
             " CASE WHEN :isFiltered THEN author IN (:author)" +
             " OR name IN (:name) OR cuisine IN (:cuisine)" +
             " OR isLiked IN (:isLiked) ELSE 1 END ORDER BY position DESC")
-//    @Query("SELECT * FROM RecipeEntity WHERE author = :author OR name = :name OR category = :category ORDER BY id DESC")
+
     fun getByUsingFilter(
         name: String,
         author: String,

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#87ceeb"
+    android:background="#afeeee"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.NewRecipeFragment">
@@ -13,15 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start|top"
+        android:choiceMode="singleChoice"
         android:orientation="horizontal"
         android:paddingTop="@dimen/convergence_spacing"
         android:paddingBottom="36dp"
-        android:choiceMode="singleChoice"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_anchor="@id/authorInput"
         app:srcCompat="@layout/cuisine_name"
         tools:layout_editor_absoluteX="10dp"
         tools:listitem="@layout/cuisine_name">
+
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.textfield.TextInputEditText
@@ -52,7 +53,7 @@
         android:textColor="#005000"
         android:singleLine="true"
         android:inputType="text"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:hint="@string/recipeName"
         app:layout_anchor="@id/cuisineList"
         tools:text="Название блюда">
@@ -72,7 +73,7 @@
         android:textColor="#310062"
         android:singleLine="true"
         android:textIsSelectable="true"
-        android:textSize="22sp"
+        android:textSize="16sp"
         app:layout_anchor="@id/edit"
         tools:text="Выбранная кухня">
     </TextView>
@@ -84,10 +85,11 @@
         android:padding="@dimen/common"
         android:layout_marginTop="50dp"
         android:gravity="center|top"
-        android:background="#90ee90"
+        android:background="#e0ffff"
         android:layout_gravity="end"
-        app:layout_anchor="@id/listOfInstructions"
-        tools:text="Режим редактирования этапов рецепта">
+        android:text="@string/instructions_editor"
+        android:textSize="12sp"
+        app:layout_anchor="@id/listOfInstructions">
     </TextView>
 
     <com.google.android.material.button.MaterialButton
@@ -103,7 +105,6 @@
         app:icon="@drawable/ic_menu_24"
         app:iconSize="32dp"
         app:iconGravity="textStart"
-        app:iconTint="#20b2aa"
         app:layout_anchor="@id/listOfInstructions"
         tools:text="Меню"/>
 
@@ -126,7 +127,7 @@
         android:layout_gravity="start|end"
         android:visibility="gone"
         android:textSize="22sp"
-        android:background="#f08080"
+        android:background="#ffe4e1"
         app:layout_anchor="@id/lowBar"
         android:text="@string/noAnyStages">
     </TextView>

@@ -6,5 +6,4 @@ data class Instructions(
     val recipeId: Long,
     val title: String,
     val description: String
-//    val pictureId: Int
 )

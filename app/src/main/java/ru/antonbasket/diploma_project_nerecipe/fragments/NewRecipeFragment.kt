@@ -40,7 +40,6 @@ class NewRecipeFragment : Fragment() {
     private val initialViewModel: ExistingRecipeContent by viewModels(
         ownerProducer = ::requireParentFragment
     )
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -53,7 +52,6 @@ class NewRecipeFragment : Fragment() {
         )
         var testContentValue: String? = null
         val recipeId = arguments?.cuisineIdArguments?.toLong() ?: 0
-        //val stagesCount = viewModel.dataStages.value?.count() ?: 0
         val cuisineAdapter = CuisineAdapter(object : CuisineClickedListener {
             override fun cuisineClicked(cuisine: Cuisine) {
                 binding.cuisineList.text = cuisine.rusName.trim()
@@ -97,7 +95,6 @@ class NewRecipeFragment : Fragment() {
                     BaseTransientBottomBar.LENGTH_INDEFINITE
                 )
                     .setAction(android.R.string.ok) {
-                        //findNavController().navigateUp()
                     }
                     .show()
                 return@setOnClickListener
@@ -212,16 +209,12 @@ class NewRecipeFragment : Fragment() {
             }.show()
         }
 
-        // This callback will only be called when MyFragment is at least Started.
             val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
-            // Handle the back button event
-            //if (draftContent != null)
-            instance = binding.edit.text.toString()
+                instance = binding.edit.text.toString()
             if (::instance.isInitialized)
                 initialViewModel.saveContent(instance)
             findNavController().navigateUp()
         }
-        // The callback can be enabled or disabled here or in the lambda
         featuring.isEnabled = true
         return binding.root
     }

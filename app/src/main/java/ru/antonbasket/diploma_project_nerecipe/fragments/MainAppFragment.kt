@@ -44,6 +44,7 @@ class MainAppFragment: Fragment() {
             container,
             false
         )
+
         val cuisineAdapter = CuisineAdapter(object : CuisineClickedListener {
             override fun cuisineClicked(cuisine: Cuisine) {
                 if (cuisine.isSelect && cuisine.rusName != "Все доступные кухни")
@@ -99,19 +100,19 @@ class MainAppFragment: Fragment() {
                 setOnClickListener {
                     isChecked = true
                     iconTint =
-                        ColorStateList(arrayOf(instance), intArrayOf(Color.YELLOW))
-                    setTextColor(Color.RED)
+                        ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
+                    setTextColor(Color.BLACK)
 
                     viewModel.getByUsingFilter("", "", "", false)
 
                     myRecipes.isChecked = false
                     myRecipes.iconTint =
-                        ColorStateList(arrayOf(instance), intArrayOf(Color.DKGRAY))
+                        ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
                     myRecipes.setTextColor(initialColor)
 
                     favoriteRecipes.isChecked = false
                     favoriteRecipes.iconTint =
-                        ColorStateList(arrayOf(instance), intArrayOf(Color.DKGRAY))
+                        ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
                     favoriteRecipes.setTextColor(initialColor)
                 }
             }
@@ -121,19 +122,19 @@ class MainAppFragment: Fragment() {
 
                 setOnClickListener {
                     isChecked = true
-                    iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
+                    iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
                     setTextColor(Color.BLACK)
 
                     viewModel.getByUsingFilter("", "", "", false)
                     viewModel.getByLikesInFilter(true)
 
                     allRecipes.isChecked = false
-                    allRecipes.iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.BLUE))
+                    allRecipes.iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
                     allRecipes.setTextColor(initialColor)
 
                     myRecipes.isChecked = false
                     myRecipes.iconTint =
-                        ColorStateList(arrayOf(instance), intArrayOf(Color.DKGRAY))
+                        ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
                     myRecipes.setTextColor(initialColor)
                 }
             }
@@ -144,19 +145,19 @@ class MainAppFragment: Fragment() {
 
                 setOnClickListener {
                     isChecked = true
-                    iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.YELLOW))
-                    setTextColor(Color.RED)
+                    iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
+                    setTextColor(Color.BLACK)
 
                     viewModel.getByUsingFilter("", "", "", false)
                     viewModel.getByAuthorInFilter("Виктор Баринов")
 
                     allRecipes.isChecked = false
-                    allRecipes.iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
+                    allRecipes.iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
                     allRecipes.setTextColor(initialColor)
 
                     favoriteRecipes.isChecked = false
                     favoriteRecipes.iconTint =
-                        ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
+                        ColorStateList(arrayOf(instance), intArrayOf(Color.BLACK))
                     favoriteRecipes.setTextColor(initialColor)
                 }
             }
@@ -230,9 +231,6 @@ class MainAppFragment: Fragment() {
                 binding.root.findViewById<RecyclerView>(R.id.listOfRecipes).visibility = View.INVISIBLE
             }
         }
-
-
-
         return binding.root
     }
 }

@@ -8,12 +8,6 @@ import ru.antonbasket.diploma_project_nerecipe.entity.InstructionsEntity
 @Dao
 interface DaoOfInstructions {
 
-//    @Query("SELECT * FROM StageEntity ORDER BY pos DESC")
-//    fun getAll(): LiveData<List<StageEntity>>
-
-//    @Query("SELECT * FROM StageEntity WHERE id = :id")
-//    fun getById(id: Int): StageEntity
-
     @Query("SELECT * FROM InstructionsEntity WHERE recipeId IN (:recipeId) ORDER BY position ASC")
     fun getStepById(recipeId: Long): List<InstructionsEntity>
 
