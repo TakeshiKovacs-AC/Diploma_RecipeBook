@@ -33,7 +33,6 @@
     <string name="noAnyRecipes">Нет данных о рецептах</string>
     <string name="noAnyStages">Нет данных об этапах приготовления</string>
 
-    <string name="instructionDesc">Шаг %1$d \n %2$s \n %3$s</string>
 
     <string-array name="cuisineNames">
         <item>Все категории</item>

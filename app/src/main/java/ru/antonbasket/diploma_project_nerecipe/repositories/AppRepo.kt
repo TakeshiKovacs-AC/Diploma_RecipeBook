@@ -14,7 +14,7 @@ interface AppRepo {
     fun getRecById(id: Long): Recipe?
     fun likeById(id: Long)
     fun getRecipeFromList(): LiveData<Recipe>
-    fun save(initialRecipe: Recipe)
+    fun save(recipe: Recipe)
     fun delete(id: Long)
     fun getByNameInFilter(name: String)
     fun getByAuthorInFilter(author: String)

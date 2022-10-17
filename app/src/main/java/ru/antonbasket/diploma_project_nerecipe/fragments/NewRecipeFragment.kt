@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -86,16 +88,11 @@ class NewRecipeFragment : Fragment() {
             if (
                 binding.authorInput.text.isNullOrBlank() ||
                 binding.reciteTitleInput.text.isNullOrBlank() ||
-                cuisineChecking == R.string.cuisineSelection.toString() ||
-                cuisineChecking == cuisineAdapter.cuisinesList[0].rusName.trim()
+                cuisineChecking == R.string.cuisineSelection.toString()
+//                cuisineChecking == cuisineAdapter.cuisinesList[0].rusName.trim()
             ) {
-                Snackbar.make(
-                    binding.root, R.string.fieldsNotFilled,
-                    BaseTransientBottomBar.LENGTH_INDEFINITE
-                )
-                    .setAction(android.R.string.ok) {
-                    }
-                    .show()
+                Toast.makeText(activity, R.string.fieldsNotFilled, Toast.LENGTH_SHORT).
+                show()
                 return@setOnClickListener
             }
 

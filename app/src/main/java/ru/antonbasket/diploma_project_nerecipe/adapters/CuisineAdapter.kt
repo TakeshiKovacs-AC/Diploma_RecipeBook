@@ -12,14 +12,14 @@ class CuisineAdapter (
     ) : RecyclerView.Adapter<CuisineViewHolder>() {
 
         val cuisinesList = listOf(
-            Cuisine(0, "All", "Все категории"),
+//            Cuisine(0, "All", "Все категории"),
             Cuisine(1, "European", "Европейская"),
-            Cuisine(6, "Russian", "Русская"),
-            Cuisine(2, "Oriental", "Азиатская"),
-            Cuisine(7, "Mediterranean", "Средиземноморская"),
-            Cuisine(3, "Panasian", "Паназиатская"),
-            Cuisine(4, "Eastern", "Восточная"),
-            Cuisine(5, "American", "Американская"),
+            Cuisine(2, "Russian", "Русская"),
+            Cuisine(3, "Oriental", "Азиатская"),
+            Cuisine(4, "Mediterranean", "Средиземноморская"),
+            Cuisine(5, "Panasian", "Паназиатская"),
+            Cuisine(6, "Eastern", "Восточная"),
+            Cuisine(7, "American", "Американская"),
         )
         override fun getItemCount(): Int = cuisinesList.size
 

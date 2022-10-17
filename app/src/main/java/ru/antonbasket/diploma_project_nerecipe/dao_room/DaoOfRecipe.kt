@@ -72,7 +72,7 @@ interface DaoOfRecipe {
 
     fun saveRecipe(recipe: RecipeEntity) =
         if (recipe.id == 0L) insert(recipe) else {
-            updateById(recipe.id, recipe.name, recipe.author,  recipe.cuisine, recipe.content)
+            updateById(recipe.id, recipe.name, recipe.author, recipe.cuisine, recipe.content)
         }
 
     @Query(

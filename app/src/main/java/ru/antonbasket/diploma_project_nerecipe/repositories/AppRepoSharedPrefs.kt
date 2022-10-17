@@ -9,7 +9,7 @@ import ru.antonbasket.diploma_project_nerecipe.EmptyContent
 import ru.antonbasket.diploma_project_nerecipe.data_classes.Instructions
 import ru.antonbasket.diploma_project_nerecipe.data_classes.Recipe
 
-const val UNREAL_ID = -1_000_000_000L
+const val UNREAL_ID = 1_000_000_000L
 
 class AppRepoSharedPrefs(
     context: Context,
@@ -57,14 +57,14 @@ class AppRepoSharedPrefs(
         return postData.value
     }
 
-    override fun save(initialRecipe: Recipe) {
-        if (initialRecipe.id == UNREAL_ID) {
+    override fun save(recipe: Recipe) {
+        if (recipe.id == UNREAL_ID) {
             recipesList = listOf(
-                initialRecipe.copy(
-                    id = initialRecipe.id,
+                recipe.copy(
+                    id = recipe.id,
                     author = "Person",
                     name = "Some dish",
-                    content = initialRecipe.content,
+                    content = recipe.content,
                     isLiked = false
                 )
             ) + recipesList
@@ -73,9 +73,9 @@ class AppRepoSharedPrefs(
             return
         }
 
-        if (initialRecipe.id == 0L) {
+        if (recipe.id == 0L) {
             recipesList = listOf(
-                initialRecipe.copy(
+                recipe.copy(
                     id = followId++,
                     author = "Person",
                     name = "Some dish",
@@ -88,10 +88,10 @@ class AppRepoSharedPrefs(
         }
 
         recipesList = recipesList.map {
-            if (it.id != initialRecipe.id)
+            if (it.id != recipe.id)
                 it
             else
-                it.copy(content = initialRecipe.content)
+                it.copy(content = recipe.content)
         }
         data.value = recipesList
         update()

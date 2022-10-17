@@ -6,7 +6,7 @@ import ru.antonbasket.diploma_project_nerecipe.adapters.CuisineClickedListener
 import ru.antonbasket.diploma_project_nerecipe.data_classes.Cuisine
 import ru.antonbasket.diploma_project_nerecipe.databinding.CuisineNameBinding
 
-class CuisineViewHolder (
+class CuisineViewHolder(
     private val binding: CuisineNameBinding,
     private val cuisineClickedListener: CuisineClickedListener,
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -36,8 +36,9 @@ fun cuisineBinding(
                 if (isChecked) {
                     textOn = cuisine.rusName
                     cuisine.isSelect = true
-                    setTextColor(Color.GREEN)
+                    setTextColor(Color.WHITE)
                 } else {
+                    isChecked = false
                     textOff = cuisine.rusName
                     cuisine.isSelect = false
                     setTextColor(initialColor)
