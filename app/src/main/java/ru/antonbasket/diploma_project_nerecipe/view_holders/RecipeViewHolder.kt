@@ -4,6 +4,7 @@ import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ru.antonbasket.diploma_project_nerecipe.R
+import ru.antonbasket.diploma_project_nerecipe.adapters.CuisineAdapter
 import ru.antonbasket.diploma_project_nerecipe.adapters.RecipeClickedListener
 import ru.antonbasket.diploma_project_nerecipe.data_classes.Recipe
 import ru.antonbasket.diploma_project_nerecipe.databinding.FragmentRecipeViewBinding
@@ -12,6 +13,7 @@ class RecipeViewHolder(
     private val binding: FragmentRecipeViewBinding,
     private val recipeClickedListener: RecipeClickedListener,
 ) : RecyclerView.ViewHolder(binding.root) {
+
 
     fun bind(recipe: Recipe) {
         recipeBinding(recipe, binding, recipeClickedListener)
@@ -24,6 +26,7 @@ fun recipeBinding(
     recipeClickedListener: RecipeClickedListener
 ) {
     binding.apply {
+
         recipeWindow.tag = recipe.position
         author.text = recipe.author
         favoriteRecipe.isChecked = recipe.isLiked

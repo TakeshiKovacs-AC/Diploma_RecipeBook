@@ -22,16 +22,16 @@ fun instructionBinding(
     instructionsClickedListener: InstructionsClickedListener,
 ) {
     binding.apply {
-        with(instructionImage) {
-            setImageResource(R.drawable.coocking)
-        }
+//        with(instructionImage) {
+//            setImageResource(R.drawable.coocking)
+//        }
 
         with(instructionDescription) {
             text =
                 "Шаг ${instructions.position}\n${instructions.title}\n${instructions.description}"
 
             setOnClickListener {
-                instructionImage.visibility = View.VISIBLE
+//                instructionImage.visibility = View.VISIBLE
                 instructionsClickedListener.instructionsClicked(instructions)
             }
         }

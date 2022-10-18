@@ -52,7 +52,7 @@ class NewRecipeFragment: Fragment() {
             container,
             false
         )
-        var testContentValue: String? = null
+        val testContentValue: String? = null
         val recipeId = arguments?.cuisineIdArguments?.toLong() ?: 0
         val cuisineAdapter = CuisineAdapter(object : CuisineClickedListener {
             override fun cuisineClicked(cuisine: Cuisine) {
@@ -109,7 +109,7 @@ class NewRecipeFragment: Fragment() {
                 )
                 viewModel.saveRecipe()
             }
-            initialViewModel.saveContent("")
+//            initialViewModel.saveContent("")
             AppRecipeListUtils.hideKeyboard(requireView())
             findNavController().navigateUp()
         }
@@ -123,12 +123,12 @@ class NewRecipeFragment: Fragment() {
         arguments?.instrDescrArguments?.let(binding.edit::setText)
             ?: binding.edit.setText(R.string.editStageSelection)
 
-        arguments?.contentTextArguments?.let(binding.edit::setText)
-            ?: binding.edit.setText(
-                initialViewModel.getRecById(getUnrealPostId())?.content
-            ).let {
-                testContentValue = it.toString()
-            }
+//        arguments?.contentTextArguments?.let(binding.edit::setText)
+//            ?: binding.edit.setText(
+//                viewModel.getRecById()?.content
+//            ).let {
+//                testContentValue = it.toString()
+//            }
 
         binding.menuButton.setOnClickListener {
             PopupMenu(it.context, it).apply {
@@ -137,13 +137,8 @@ class NewRecipeFragment: Fragment() {
                     when (item.itemId) {
                         R.id.add -> {
                             if (recipeId == 0L) {
-                                Snackbar.make(
-                                    binding.root, R.string.noParentObj,
-                                    BaseTransientBottomBar.LENGTH_INDEFINITE
-                                )
-                                    .setAction(android.R.string.ok) {
-                                    }
-                                    .show()
+                                Toast.makeText(activity, R.string.noParentObj, Toast.LENGTH_SHORT).
+                                show()
                             } else {
                                 findNavController().navigate(
                                     R.id.newRecipeFragment_to_newInstructionsFragment,
@@ -180,13 +175,8 @@ class NewRecipeFragment: Fragment() {
                         R.id.remove -> {
                             if (::instructionsInstance.isInitialized) {
                                 if (recipeId == 0L) {
-                                    Snackbar.make(
-                                        binding.root, R.string.noParentObj,
-                                        BaseTransientBottomBar.LENGTH_INDEFINITE
-                                    )
-                                        .setAction(android.R.string.ok) {
-                                        }
-                                        .show()
+                                    Toast.makeText(activity, R.string.noParentObj, Toast.LENGTH_SHORT).
+                                    show()
                                 } else {
                                     viewModel.deleteInstruction(instructionsInstance)
                                     viewModel.upDateInstructions()
@@ -201,13 +191,13 @@ class NewRecipeFragment: Fragment() {
             }.show()
         }
 
-            val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
-                instance = binding.edit.text.toString()
-            if (::instance.isInitialized)
-                initialViewModel.saveContent(instance)
-            findNavController().navigateUp()
-        }
-        featuring.isEnabled = true
+//            val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
+//                instance = binding.edit.text.toString()
+//            if (::instance.isInitialized)
+//                initialViewModel.saveContent(instance)
+//            findNavController().navigateUp()
+//        }
+//        featuring.isEnabled = true
         return binding.root
     }
 
