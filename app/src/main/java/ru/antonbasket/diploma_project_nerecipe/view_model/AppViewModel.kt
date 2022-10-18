@@ -15,8 +15,8 @@ private val instructionsEmpty = EmptyContent.instructionAbsence
 
 class AppViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: AppRepo = AppRepoImpl(
-        DataBase.getExample(context = application).instructionsDao(),
-        DataBase.getExample(context = application).recipeDao()
+        DataBase.getExample(context = application).recipeDao(),
+        DataBase.getExample(context = application).instructionsDao()
     )
     val data = repository.getAll()
     val recipeContent = MutableLiveData(recipeEmpty)

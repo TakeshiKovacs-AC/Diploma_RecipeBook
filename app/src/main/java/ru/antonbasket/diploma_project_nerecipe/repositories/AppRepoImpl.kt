@@ -12,8 +12,8 @@ import ru.antonbasket.diploma_project_nerecipe.entity.InstructionsEntity
 import ru.antonbasket.diploma_project_nerecipe.entity.RecipeEntity
 
 class AppRepoImpl(
-    private val roomInstructions: DaoOfInstructions,
-    private val roomRecipe: DaoOfRecipe
+    private val roomRecipe: DaoOfRecipe,
+    private val roomInstructions: DaoOfInstructions
 ) : AppRepo {
 
     private val data: MutableLiveData<List<Recipe>> = Transformations.map(roomRecipe.getAll()) { list ->
@@ -78,8 +78,8 @@ class AppRepoImpl(
 
     override fun getRecipeFromList(): LiveData<Recipe> = recipeData
 
-    override fun save(initialRecipe: Recipe) {
-        roomRecipe.saveRecipe(RecipeEntity.fromData(initialRecipe))
+    override fun save(recipe: Recipe) {
+        roomRecipe.saveRecipe(RecipeEntity.fromData(recipe))
     }
 
     override fun delete(id: Long) {

@@ -11,8 +11,8 @@ import ru.antonbasket.diploma_project_nerecipe.entity.RecipeEntity
 
 @Database(entities = [RecipeEntity::class, InstructionsEntity::class], version = 1)
 abstract class DataBase: RoomDatabase() {
-    abstract fun instructionsDao(): DaoOfInstructions
     abstract fun recipeDao(): DaoOfRecipe
+    abstract fun instructionsDao(): DaoOfInstructions
 
     companion object {
         @Volatile

@@ -33,7 +33,7 @@ import ru.antonbasket.diploma_project_nerecipe.repositories.getUnrealPostId
 import ru.antonbasket.diploma_project_nerecipe.view_model.AppViewModel
 import ru.antonbasket.diploma_project_nerecipe.view_model.ExistingRecipeContent
 
-class NewRecipeFragment : Fragment() {
+class NewRecipeFragment: Fragment() {
     private lateinit var instance: String
     private lateinit var instructionsInstance: Instructions
     private val viewModel: AppViewModel by viewModels(

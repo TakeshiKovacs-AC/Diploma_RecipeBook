@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
+import ru.antonbasket.diploma_project_nerecipe.databinding.ActivityNerecipeBinding
 import ru.antonbasket.diploma_project_nerecipe.databinding.FragmentMainAppBinding
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewRecipeFragment.Companion.contentTextArguments
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewRecipeFragment.Companion.cuisineArguments
