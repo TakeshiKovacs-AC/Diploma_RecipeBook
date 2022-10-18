@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -38,16 +39,16 @@ class NewInstructionsFragment: Fragment() {
             false
         )
         var testContentValue: String? = null
-        val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
-            instance = binding.instructionsList.text.toString()
-            if (::instance.isInitialized)
-                initialViewModel.saveContent(instance)
-            findNavController().navigateUp()
-        }
-        featuring.isEnabled = true
+//        val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
+//            instance = binding.instructionsList.text.toString()
+//            if (::instance.isInitialized)
+//                initialViewModel.saveContent(instance)
+//            findNavController().navigateUp()
+//        }
+//        featuring.isEnabled = true
 
 
-        binding.numberOfStep.text = "${resources.getString(R.string.stepNumber)}${arguments?.instrPlaceArguments?.toInt()}"
+        binding.numberOfStep.text = "${resources.getString(R.string.stepNumber)} ${arguments?.instrPlaceArguments?.toInt()}"
         arguments?.instrTitleArguments?.let(binding.stepInput::setText)
         arguments?.instrDescrArguments?.let(binding.instructionsList::setText)
             ?: binding.instructionsList.setText(
@@ -60,13 +61,8 @@ class NewInstructionsFragment: Fragment() {
             if (binding.stepInput.text.isNullOrBlank() ||
                 binding.instructionsList.text.isNullOrBlank()
             ) {
-                Snackbar.make(
-                    binding.root, R.string.fieldsNotFilled,
-                    BaseTransientBottomBar.LENGTH_INDEFINITE
-                )
-                    .setAction(android.R.string.ok) {
-                    }
-                    .show()
+                Toast.makeText(activity, R.string.fieldsNotFilled, Toast.LENGTH_SHORT).
+                show()
                 return@setOnClickListener
             }
 
@@ -83,7 +79,7 @@ class NewInstructionsFragment: Fragment() {
                 )
                 viewModel.saveInstruction()
             }
-            initialViewModel.saveContent("")
+//            initialViewModel.saveContent("")
             AppRecipeListUtils.hideKeyboard(requireView())
             findNavController().navigateUp()
         }

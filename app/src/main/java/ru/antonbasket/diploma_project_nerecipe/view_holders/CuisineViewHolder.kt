@@ -25,9 +25,10 @@ fun cuisineBinding(
             id = cuisine.id
             tag = cuisine.rusName
             text = cuisine.rusName
-            isChecked = cuisine.isSelect
             textOn = cuisine.rusName
             textOff = cuisine.rusName
+            performClick()
+            isChecked = cuisine.isSelect
 
             val initialColor = textColors.defaultColor
             setTextColor(initialColor)

@@ -25,15 +25,19 @@
                 android:id="@+id/instructionDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="end|bottom"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:background="@drawable/coocking"
                 android:padding="24dp"
                 tools:text="Instruction" />
 
-            <ImageView
-                android:id="@+id/instructionImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/coocking"
-                android:scaleType="fitXY" />
+<!--            <ImageView-->
+<!--                android:id="@+id/instructionImage"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src=-->
+<!--                android:scaleType="fitXY" />-->
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
