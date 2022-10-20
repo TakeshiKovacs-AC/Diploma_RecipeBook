@@ -12,7 +12,6 @@ class CuisineAdapter (
     ) : RecyclerView.Adapter<CuisineViewHolder>() {
 
         val cuisinesList = listOf(
-//            Cuisine(0, "All", "Все категории"),
             Cuisine(1, "European", "Европейская"),
             Cuisine(2, "Russian", "Русская"),
             Cuisine(3, "Oriental", "Азиатская"),

@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import com.google.android.material.snackbar.Snackbar
-import ru.antonbasket.diploma_project_nerecipe.databinding.ActivityNerecipeBinding
 import ru.antonbasket.diploma_project_nerecipe.databinding.FragmentMainAppBinding
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewRecipeFragment.Companion.contentTextArguments
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewRecipeFragment.Companion.cuisineArguments
@@ -75,11 +74,8 @@ class NerecipeActivity : AppCompatActivity(R.layout.activity_nerecipe) {
         } catch (e: Exception) {
             val showSnackBar: View? = this.currentFocus?.rootView
             if (showSnackBar != null) {
-                Snackbar.make(
-                    showSnackBar, R.string.searchError,5000
-                )
-                    .setAction(android.R.string.ok) {}
-                    .show()
+                Toast.makeText (this, R.string.searchError, Toast.LENGTH_SHORT).
+                show()
             }
         }
         return super.onOptionsItemSelected(point)

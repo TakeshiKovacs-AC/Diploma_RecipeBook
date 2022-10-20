@@ -7,14 +7,10 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.addCallback
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.BaseTransientBottomBar
-import com.google.android.material.snackbar.Snackbar
 import ru.antonbasket.diploma_project_nerecipe.AppRecipeListUtils
 import ru.antonbasket.diploma_project_nerecipe.R
 import ru.antonbasket.diploma_project_nerecipe.StringArguments
@@ -29,17 +25,11 @@ import ru.antonbasket.diploma_project_nerecipe.fragments.NewInstructionsFragment
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewInstructionsFragment.Companion.instrPlaceArguments
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewInstructionsFragment.Companion.instrTitleArguments
 import ru.antonbasket.diploma_project_nerecipe.fragments.NewInstructionsFragment.Companion.newInstrArguments
-import ru.antonbasket.diploma_project_nerecipe.repositories.getUnrealPostId
 import ru.antonbasket.diploma_project_nerecipe.view_model.AppViewModel
-import ru.antonbasket.diploma_project_nerecipe.view_model.ExistingRecipeContent
 
 class NewRecipeFragment: Fragment() {
-    private lateinit var instance: String
     private lateinit var instructionsInstance: Instructions
     private val viewModel: AppViewModel by viewModels(
-        ownerProducer = ::requireParentFragment
-    )
-    private val initialViewModel: ExistingRecipeContent by viewModels(
         ownerProducer = ::requireParentFragment
     )
     override fun onCreateView(
@@ -64,7 +54,7 @@ class NewRecipeFragment: Fragment() {
         val instructionsAdapter = InstructionsAdapter(object : InstructionsClickedListener {
             override fun instructionsClicked(instructions: Instructions) {
                 instructionsInstance = instructions
-                binding.edit.setText("Шаг ${instructions.position}\n${instructions.title}\n${instructions.description}")
+                binding.edit.text = "Шаг ${instructions.position}\n${instructions.title}\n${instructions.description}"
             }
         })
         binding.listOfInstructions.adapter = instructionsAdapter
@@ -89,7 +79,6 @@ class NewRecipeFragment: Fragment() {
                 binding.authorInput.text.isNullOrBlank() ||
                 binding.reciteTitleInput.text.isNullOrBlank() ||
                 cuisineChecking == R.string.cuisineSelection.toString()
-//                cuisineChecking == cuisineAdapter.cuisinesList[0].rusName.trim()
             ) {
                 Toast.makeText(activity, R.string.fieldsNotFilled, Toast.LENGTH_SHORT).
                 show()
@@ -109,26 +98,16 @@ class NewRecipeFragment: Fragment() {
                 )
                 viewModel.saveRecipe()
             }
-//            initialViewModel.saveContent("")
             AppRecipeListUtils.hideKeyboard(requireView())
             findNavController().navigateUp()
         }
 
         arguments?.recipeAuthorArguments?.let(binding.authorInput::setText)
-
         arguments?.recipeNameArguments?.let(binding.reciteTitleInput::setText)
-
         arguments?.cuisineArguments?.let(binding.cuisineList::setText)
             ?: binding.cuisineList.setText(R.string.cuisineSelection)
         arguments?.instrDescrArguments?.let(binding.edit::setText)
             ?: binding.edit.setText(R.string.editStageSelection)
-
-//        arguments?.contentTextArguments?.let(binding.edit::setText)
-//            ?: binding.edit.setText(
-//                viewModel.getRecById()?.content
-//            ).let {
-//                testContentValue = it.toString()
-//            }
 
         binding.menuButton.setOnClickListener {
             PopupMenu(it.context, it).apply {
@@ -190,14 +169,6 @@ class NewRecipeFragment: Fragment() {
                 }
             }.show()
         }
-
-//            val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
-//                instance = binding.edit.text.toString()
-//            if (::instance.isInitialized)
-//                initialViewModel.saveContent(instance)
-//            findNavController().navigateUp()
-//        }
-//        featuring.isEnabled = true
         return binding.root
     }
 

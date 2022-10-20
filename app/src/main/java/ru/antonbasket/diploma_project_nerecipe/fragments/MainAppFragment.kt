@@ -101,7 +101,7 @@ class MainAppFragment: Fragment() {
                     isChecked = true
                     iconTint =
                         ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
-                    setTextColor(Color.BLACK)
+                    setTextColor(Color.GREEN)
 
                     viewModel.getByUsingFilter("", "", "", false)
 
@@ -123,7 +123,7 @@ class MainAppFragment: Fragment() {
                 setOnClickListener {
                     isChecked = true
                     iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
-                    setTextColor(Color.BLACK)
+                    setTextColor(Color.GREEN)
 
                     viewModel.getByUsingFilter("", "", "", false)
                     viewModel.getByLikesInFilter(true)
@@ -146,7 +146,7 @@ class MainAppFragment: Fragment() {
                 setOnClickListener {
                     isChecked = true
                     iconTint = ColorStateList(arrayOf(instance), intArrayOf(Color.GREEN))
-                    setTextColor(Color.BLACK)
+                    setTextColor(Color.GREEN)
 
                     viewModel.getByUsingFilter("", "", "", false)
                     viewModel.getByAuthorInFilter("Виктор Баринов")
@@ -163,7 +163,7 @@ class MainAppFragment: Fragment() {
             }
         }
 
-        val appAdapter = RecipeAdapter(object : RecipeClickedListener {
+        val appAdapter = RecipeAdapter(cuisineAdapter, object : RecipeClickedListener {
             private fun newFragmentForwarding(recipe: Recipe) {
                 findNavController().navigate(
                     R.id.mainAppFragment_to_newRecipeFragment,

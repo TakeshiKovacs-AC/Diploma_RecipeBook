@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.antonbasket.diploma_project_nerecipe.R
 import ru.antonbasket.diploma_project_nerecipe.StringArguments
+import ru.antonbasket.diploma_project_nerecipe.adapters.CuisineAdapter
 import ru.antonbasket.diploma_project_nerecipe.adapters.InstructionsAdapter
 import ru.antonbasket.diploma_project_nerecipe.adapters.InstructionsClickedListener
 import ru.antonbasket.diploma_project_nerecipe.adapters.RecipeClickedListener
@@ -104,7 +105,10 @@ class RecipeViewFragment: Fragment() {
             }
 
             localViewModel.recipeData.observe(viewLifecycleOwner) {
-                recipeBinding(it, binding, recipeClickedListener)
+                val cuisineAdapter: CuisineAdapter? = null
+                if (cuisineAdapter != null) {
+                    recipeBinding(it, binding, recipeClickedListener, cuisineAdapter)
+                }
             }
 
             val instructionsAdapter = InstructionsAdapter(object : InstructionsClickedListener {

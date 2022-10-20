@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.BaseTransientBottomBar
-import com.google.android.material.snackbar.Snackbar
 import ru.antonbasket.diploma_project_nerecipe.AppRecipeListUtils
 import ru.antonbasket.diploma_project_nerecipe.R
 import ru.antonbasket.diploma_project_nerecipe.StringArguments
@@ -20,7 +17,6 @@ import ru.antonbasket.diploma_project_nerecipe.view_model.AppViewModel
 import ru.antonbasket.diploma_project_nerecipe.view_model.ExistingRecipeContent
 
 class NewInstructionsFragment: Fragment() {
-    private lateinit var instance: String
     private val viewModel: AppViewModel by viewModels(
         ownerProducer = ::requireParentFragment
     )
@@ -39,14 +35,6 @@ class NewInstructionsFragment: Fragment() {
             false
         )
         var testContentValue: String? = null
-//        val featuring = requireActivity().onBackPressedDispatcher.addCallback(this) {
-//            instance = binding.instructionsList.text.toString()
-//            if (::instance.isInitialized)
-//                initialViewModel.saveContent(instance)
-//            findNavController().navigateUp()
-//        }
-//        featuring.isEnabled = true
-
 
         binding.numberOfStep.text = "${resources.getString(R.string.stepNumber)} ${arguments?.instrPlaceArguments?.toInt()}"
         arguments?.instrTitleArguments?.let(binding.stepInput::setText)
@@ -79,7 +67,6 @@ class NewInstructionsFragment: Fragment() {
                 )
                 viewModel.saveInstruction()
             }
-//            initialViewModel.saveContent("")
             AppRecipeListUtils.hideKeyboard(requireView())
             findNavController().navigateUp()
         }

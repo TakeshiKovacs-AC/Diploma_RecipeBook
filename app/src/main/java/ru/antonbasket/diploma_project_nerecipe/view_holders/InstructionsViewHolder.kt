@@ -1,9 +1,8 @@
 package ru.antonbasket.diploma_project_nerecipe.view_holders
 
-import android.view.View
+
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import ru.antonbasket.diploma_project_nerecipe.R
 import ru.antonbasket.diploma_project_nerecipe.adapters.InstructionsClickedListener
 import ru.antonbasket.diploma_project_nerecipe.data_classes.Instructions
 import ru.antonbasket.diploma_project_nerecipe.databinding.InstructionsRangeBinding
@@ -22,16 +21,11 @@ fun instructionBinding(
     instructionsClickedListener: InstructionsClickedListener,
 ) {
     binding.apply {
-//        with(instructionImage) {
-//            setImageResource(R.drawable.coocking)
-//        }
-
         with(instructionDescription) {
             text =
                 "Шаг ${instructions.position}\n${instructions.title}\n${instructions.description}"
 
             setOnClickListener {
-//                instructionImage.visibility = View.VISIBLE
                 instructionsClickedListener.instructionsClicked(instructions)
             }
         }

@@ -20,7 +20,6 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     )
     val data = repository.getAll()
     val recipeContent = MutableLiveData(recipeEmpty)
-    val recipeListForSaving = MutableLiveData<Recipe>(null)
     val recipeData = repository.getRecipeFromList()
 
     val instructionsData = repository.getAllInstructions()

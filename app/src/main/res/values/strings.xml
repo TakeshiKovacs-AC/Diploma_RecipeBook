@@ -42,6 +42,7 @@
         <item>Eastern</item>
         <item>American</item>
     </string-array>
+
     <string name="dummy_button" translatable="false">Dummy Button</string>
     <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
 </resources>
